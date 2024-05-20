@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="whatsapp_account_view_tree" model="ir.ui.view">
+        <field name="name">whatsapp.account.view.tree</field>
+        <field name="model">whatsapp.account</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone_uid"/>
+                <field name="account_uid"/>
+                <field name="app_uid"/>
+                <field name="allowed_company_ids" widget="many2many_tags" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+    <record id="whatsapp_account_view_form" model="ir.ui.view">
+        <field name="name">whatsapp.account.view.form</field>
+        <field name="model">whatsapp.account</field>
+        <field name="arch" type="xml">
+            <form string="WhatsApp Business Account">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_open_templates" class="oe_stat_button" icon="fa-whatsapp">
+                            <field name="templates_count" string="Templates" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" attrs="{'invisible':[('active', '=', True)]}" bg_color="text-bg-danger"/>
+                    <div class="oe_title" id='title'>
+                        <label for="name" string="Name"/>
+                        <h1 id="name"><field name="name" required="1" placeholder="e.g. Odoo"/></h1>
+                    </div>
+                    <h2>Sending messages <a href="https://www.odoo.com/documentation/17.0/applications/productivity/whatsapp.html" title="Documentation" class="o_doc_link" target="_blank"></a></h2>
+                    <p>This configuration is for sending the WhatsApp</p>
+                    <field name="active" invisible="1"/>
+                    <group id="tosend_msg">
+                         <group>
+                            <field name="phone_uid" required="1" placeholder="e.g. 123456789012345"/>
+                            <field name="account_uid" placeholder="e.g. 123456789012345"/>
+                        </group>
+                        <group>
+                            <field name="token" password="True" placeholder="e.g. EGTRWHRTHETHWRBTEJETHGQEGWRHWR"/>
+                            <field name="app_secret" password="True" placeholder="e.g. 00112233445566778899aabbccddeeff"/>
+                            <field name="app_uid" placeholder="e.g. 123456789012345"/>
+                        </group>
+                        <div class="content-group">
+                            <button name="button_sync_whatsapp_account_templates" type="object" string="Sync Templates" class="btn-link p-1" icon="fa-refresh"/><br/>
+                            <button name="button_test_connection" type="object" string="Test Connection" icon="fa-arrow-right" class="btn-link p-1"/>
+                        </div>
+                    </group>
+                    <group id="toreceive_msg">
+                        <group attrs="{'invisible':[('callback_url', '=', False)]}">
+                            <h2 >Receiving messages <a href="https://www.odoo.com/documentation/17.0/applications/productivity/whatsapp.html" title="Documentation" class="o_doc_link" target="_blank"></a></h2>
+                            <p>This configuration is for receiving the WhatsApp messages.</p>
+                            <field name="callback_url" widget="CopyClipboardURL"/>
+                            <field name="webhook_verify_token" widget="CopyClipboardText"/>
+                        </group>
+                        <group>
+                            <h2>Control</h2>
+                            <p>Notify users and company where this account can be used</p>
+                            <field name="notify_user_ids" string="Notify users" widget="many2many_tags"/>
+                            <field name="allowed_company_ids" string="Allowed companies" widget="many2many_tags" groups="base.group_multi_company" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="whatsapp_account_view_search" model="ir.ui.view">
+        <field name="name">whatsapp.account.view.search</field>
+        <field name="model">whatsapp.account</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="phone_uid"/>
+                <field name="account_uid"/>
+                <field name="app_uid"/>
+                <separator/>
+                <filter string="Archived" name="filter_archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+    <record id="whatsapp_account_action" model="ir.actions.act_window">
+        <field name="name">WhatsApp Business Account</field>
+        <field name="res_model">whatsapp.account</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no WhatsApp Business Account configured.
+            </p>
+            <p>
+                If you have credentials for cloud api then setup here and start using WhatsApp.
+                You can register a WhatsApp Business Account through
+                <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/reference/registration" target="_blank">WhatsApp cloud api</a>
+            </p>
+        </field>
+    </record>
+</odoo>

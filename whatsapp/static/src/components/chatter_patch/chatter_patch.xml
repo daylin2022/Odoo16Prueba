@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t  t-name="ChatterTopbar" t-inherit="mail.ChatterTopbar" t-inherit-mode="extension" owl="1">
+        <xpath expr="//*[contains(@class, 'o_ChatterTopbar_buttonScheduleActivity')]" position="before">
+
+            <button class="btn btn-secondary text-nowrap me-1"
+                type="button"
+                t-on-click="chatterTopbar.chatter.prueba"
+            >
+                <span>WhatsApp</span>
+            </button>
+        </xpath>
+    </t>
+</templates>
