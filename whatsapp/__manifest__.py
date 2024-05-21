@@ -39,7 +39,7 @@
                     'whatsapp/static/src/components/chatter_patch/chatter_patch.js',
                     'whatsapp/static/src/components/phone_field/phone_field.xml',
                     'whatsapp/static/src/components/phone_field/phone_field.js',
-                    'whatsapp/static/src/components/messaging_menu_tab/messaging_menu_tab.xml',
+                    #'whatsapp/static/src/components/messaging_menu_tab/messaging_menu_tab.xml',
                     'whatsapp/static/src/scss/*',
                     ('remove', 'whatsapp/static/src/scss/*.dark.scss')
         ],
