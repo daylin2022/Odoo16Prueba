@@ -6,4 +6,13 @@
             <MessagingMenuTab messagingMenu="messagingMenu" tabId="'whatsapp'"/>
         </xpath>
     </t>
+
+     <t  t-inherit="mail.MessagingMenuTab" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[@class='o_MessagingMenuTab']" position="inside">
+           <t t-elif="props.tabId === 'whatsapp'">Whatsapp</t>
+
+        </xpath>
+    </t>
+
+
 </templates>
