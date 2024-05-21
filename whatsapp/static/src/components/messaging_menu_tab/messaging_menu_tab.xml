@@ -8,9 +8,8 @@
     </t>
 
      <t  t-inherit="mail.MessagingMenuTab" t-inherit-mode="extension" owl="1">
-        <xpath expr="//button[@class='o_MessagingMenuTab']" position="inside">
+        <xpath expr="//button" position="inside">
            <t t-elif="props.tabId === 'whatsapp'">Whatsapp</t>
-
         </xpath>
     </t>
 
