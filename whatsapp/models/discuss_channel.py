@@ -259,7 +259,7 @@ class DiscussChannel(models.Model):
             }])
             message_body = Markup(f'<div class="o_mail_notification">{_("joined the channel")}</div>')
             new_member.channel_id.message_post(body=message_body, message_type="notification", subtype_xmlid="mail.mt_comment")
-            notifications.append((channel, 'mail.channel/insert', {
+            notifications.append((self, 'mail.channel/insert', {
                 'channelMembers': [('insert', list(new_members._mail_channel_member_format().values()))],
                 'id': self.id,
                 'memberCount': self.member_count,
