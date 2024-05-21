@@ -43,7 +43,7 @@ registerPatch({
         messagingAsPinnedWhatsapp: one('Messaging', {
             compute() {
                 if (!this.messaging || !this.channel || this.channel.channel_type !== 'whatsapp' || !this.isPinned) {
-                    return this.messaging;
+                    return clear();
                 }
                 return this.messaging;
             },
