@@ -238,7 +238,7 @@ class DiscussChannel(models.Model):
             channel._broadcast(partners_to_notify.ids)
         return channel
 
-    def _channel_message_notifications(self):
+    def _channel_message_notifications(self,message, message_format=False):
         """ Adds the current partner as a member of self channel and pins them if not already pinned. """
         self.ensure_one()
         notifications = super()._channel_message_notifications(message=message, message_format=message_format)
