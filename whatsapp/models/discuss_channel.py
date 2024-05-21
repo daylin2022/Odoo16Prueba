@@ -134,7 +134,7 @@ class DiscussChannel(models.Model):
                     'wa_account_id': self.wa_account_id.id,
                 })
                 whatsapp_message._send()
-                self.whatsapp_channel_join_and_pin()
+                #self._channel_message_notifications()
         return new_msg
 
     # ------------------------------------------------------------
@@ -238,9 +238,10 @@ class DiscussChannel(models.Model):
             channel._broadcast(partners_to_notify.ids)
         return channel
 
-    def whatsapp_channel_join_and_pin(self):
+    def _channel_message_notifications(self):
         """ Adds the current partner as a member of self channel and pins them if not already pinned. """
         self.ensure_one()
+        notifications = super()._channel_message_notifications(message=message, message_format=message_format)
         if self.channel_type != 'whatsapp':
             raise ValidationError(_('This join method is not possible for regular channels.'))
 
@@ -266,7 +267,8 @@ class DiscussChannel(models.Model):
                     'model': "mail.channel",
                 }
             })
-        return self._channel_info()[0]
+        #return self._channel_info()[0]
+        return notifications
 
     # ------------------------------------------------------------
     # OVERRIDE
