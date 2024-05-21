@@ -32,6 +32,9 @@
     'assets': {
         'mail.assets_discuss_public': [
                 ],
+        'mail.assets_messaging': [
+                    'whatsapp/static/src/models/*.js',
+                ],
         'web.assets_backend': [
                     'whatsapp/static/src/components/whatsapp_button/whatsapp_button.xml',
                     'whatsapp/static/src/components/whatsapp_button/whatsapp_button.js',
@@ -40,9 +43,6 @@
                     'whatsapp/static/src/components/phone_field/phone_field.xml',
                     'whatsapp/static/src/components/phone_field/phone_field.js',
                     'whatsapp/static/src/components/messaging_menu_tab/messaging_menu_tab.xml',
-                    'whatsapp/static/src/components/messaging_menu_tab/notificationListViews.js',
-                    'whatsapp/static/src/components/discuss_sidebar_category/discuss.js',
-                    'whatsapp/static/src/components/discuss_sidebar_category/discuss_sidebar_category.js',
                     'whatsapp/static/src/components/discuss_sidebar_category/discuss_sidebar.xml',
 
 
