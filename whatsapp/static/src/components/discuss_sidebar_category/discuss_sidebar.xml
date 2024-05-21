@@ -5,7 +5,7 @@
             <t t-set="categoryWhatsapp" t-value="discussView.discuss.categoryWhatsapp"/>
             <t t-if="categoryWhatsapp and categoryWhatsapp.categoryItems.length">
                 <DiscussSidebarCategory
-                    className="'o_DiscussSidebar_category o_DiscussSidebar_categoryLivechat'"
+                    className="'o_DiscussSidebar_category o_DiscussSidebar_categoryWhatsapp'"
                     record="categoryWhatsapp"
                 />
             </t>
