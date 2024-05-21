@@ -32,6 +32,9 @@
     'assets': {
         'mail.assets_discuss_public': [
                 ],
+        'mail.assets_messaging': [
+                    'whatsapp/static/src/models/*.js',
+                ],
         'web.assets_backend': [
                     'whatsapp/static/src/components/whatsapp_button/whatsapp_button.xml',
                     'whatsapp/static/src/components/whatsapp_button/whatsapp_button.js',
