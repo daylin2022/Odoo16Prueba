@@ -43,6 +43,8 @@
                     'whatsapp/static/src/components/messaging_menu_tab/notificationListViews.js',
                     'whatsapp/static/src/components/discuss_sidebar_category/discuss.js',
                     'whatsapp/static/src/components/discuss_sidebar_category/discuss_sidebar_category.js',
+                    'whatsapp/static/src/components/discuss_sidebar_category/discuss_sidebar.xml',
+
 
                     'whatsapp/static/src/scss/*',
                     ('remove', 'whatsapp/static/src/scss/*.dark.scss')
