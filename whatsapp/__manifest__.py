@@ -43,9 +43,10 @@
                     'whatsapp/static/src/components/phone_field/phone_field.xml',
                     'whatsapp/static/src/components/phone_field/phone_field.js',
                     'whatsapp/static/src/components/messaging_menu_tab/messaging_menu_tab.xml',
-                    'whatsapp/static/src/components/discuss_sidebar_category/discuss_sidebar.xml',
                     'whatsapp/static/src/components/thread_icon/thread_icon.xml',
                     'whatsapp/static/src/components/thread_needaction_preview/thread_needaction_preview.js',
+                    'whatsapp/static/src/components/discuss_sidebar_category/discuss_sidebar.xml',
+
                     'whatsapp/static/src/scss/*',
                     ('remove', 'whatsapp/static/src/scss/*.dark.scss')
         ],
@@ -53,13 +54,6 @@
         "web.assets_web_dark": [
             'whatsapp/static/src/**/*.dark.scss',
          ],
-        #'web.tests_assets': [
-            # 'whatsapp/static/tests/helpers/**/*.js',
-        # ],
-        #'web.qunit_suite_tests': [
-            # 'whatsapp/static/tests/**/*',
-            # ('remove', 'whatsapp/static/tests/helpers/**/*.js'),
-        #],
     },
     'license': 'OEEL-1',
     'application': True,
