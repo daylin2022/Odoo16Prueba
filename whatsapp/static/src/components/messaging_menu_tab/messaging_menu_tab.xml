@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t  t-inherit="mail.MessagingMenuTab" t-inherit-mode="extension">
+    <t  t-inherit="mail.MessagingMenuTab" t-inherit-mode="extension" owl="1">
         <xpath expr="//t" position="after">
-                <t t-elif="props.tabId === 'whatsapp'">Whatsapp</t>
+            <t t-elif="props.tabId === 'whatsapp'">Whatsapp</t>
         </xpath>
     </t>
 </templates>
